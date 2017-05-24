@@ -10,8 +10,7 @@
 # Abstract
 #
 # I present here the general algorithm for constructing booleen circuit in machine learning. 
-# For supervise learning, with multiple categories and unsupervise learning with autoencoder.
-
+# For supervise learning, with multiple categories
 
 # Package
 
@@ -65,8 +64,8 @@ def GenDataMNIST_2cat_brut(trainFile,testFile,cat1,cat2,nbbits,nbTrain,nbTest,nb
         with open(filename,"r") as file:
             for line in file:
                 line = (line.strip()).split()
-                line = list(map(lambda x:int(float(x) * 256),line)) #float(x) * 256 tu l'ecris toujours sur 8 bits alors ?
-                line[784] = int(line[784] / 256) #pourquoi diviser sur 256 ?
+                line = list(map(lambda x:int(float(x) * 256),line))
+                line[784] = int(line[784] / 256) 
                 a.append(line)
         return a
 
@@ -139,8 +138,8 @@ def GenDataMNIST_10cat_brut(trainFile,testFile,CategoryList,nbbits,nbTrain,nbTes
         with open(filename,"r") as file:
             for line in file:
                 line = (line.strip()).split()
-                line = list(map(lambda x:int(float(x) * 256),line)) #float(x) * 256 tu l'ecris toujours sur 8 bits alors ?
-                line[784] = int(line[784] / 256) #pourquoi diviser sur 256 ?
+                line = list(map(lambda x:int(float(x) * 256),line)) 
+                line[784] = int(line[784] / 256) 
                 a.append(line)
         return a
 
